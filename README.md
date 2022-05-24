@@ -7,3 +7,6 @@ A simple rust program designed to count the words in a text document you give it
  - return_count (optional)
    - This is how many you want returned back to you.
    - If nothing is input, or an invalid number is given, it will default to 10.
+
+## License
+This project is under the [MIT License.](https://choosealicense.com/licenses/mit/)
