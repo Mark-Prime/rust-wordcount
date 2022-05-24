@@ -39,10 +39,24 @@ fn main() {
         }
     }
 
+    let return_count: i32 = match env::args().nth(2) {
+        Some(input) => match input.parse::<i32>() {
+            Ok(count) => count,
+            Err(_) => {
+                println!("Error: {} is not a valid number.", input);
+                10
+            }
+        },
+        None => {
+            println!("Error: {} is not a valid input.", input);
+            10
+        },
+    };
+
     let mut sorted_word_counts = word_counts.iter().collect::<Vec<_>>();
     sorted_word_counts.sort_by(|a, b| b.1.cmp(a.1));
 
-    for index in 0..10 {
+    for index in 0..return_count as usize {
         println!("{} - {}", sorted_word_counts[index].0, sorted_word_counts[index].1);
     }
 }
